@@ -9,12 +9,18 @@ function GuitarPhoto (name, path) {
 
 var tracker = {
   getRandomNum: function (){
-    return Math.floor(Math.random() * 12) + 1;
+    return Math.floor(Math.random() * 12);
   },
   getRandomImg: function (){
     var img1 = guitarPhoto[this.getRandomNum()].path;
     var img2 = guitarPhoto[this.getRandomNum()].path;
-
+    var display1 = document.getElementById ('displayImg1');
+    var display2 = document.getElementById ('displayImg2');
+    while (img1 === img2) {
+      img2 = guitarPhoto[this.getRandomNum()].path;
+    };
+    display1.src = img1;
+    display2.src = img2;
   },
 };
 
