@@ -25,6 +25,17 @@ var tracker = {
 };
 
 
+
+//vote = function
+
+
+// picture1.addEventListener('click', function(){
+//   vote(index1)
+// });
+// picture2.addEventListener('click', function(){
+//   vote(index2)
+// });
+
 var img1 = new GuitarPhoto('Gibson 335', "images/335.jpg");
 var img2 = new GuitarPhoto('Angus Young SG', "images/ay-sg.jpg");
 var img3 = new GuitarPhoto('Beatles Rickenbacher', "images/b-rb.jpg");
