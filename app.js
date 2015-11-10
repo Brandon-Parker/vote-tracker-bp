@@ -8,22 +8,26 @@ function GuitarPhoto (name, path) {
 }
 
 var tracker = {
-  getRandomNum: function (){
-    return Math.floor(Math.random() * 12);
-  },
-  getRandomImg: function (){
-    var img1 = guitarPhoto[this.getRandomNum()].path;
-    var img2 = guitarPhoto[this.getRandomNum()].path;
-    var display1 = document.getElementById ('displayImg1');
-    var display2 = document.getElementById ('displayImg2');
-    while (img1 === img2) {
-      img2 = guitarPhoto[this.getRandomNum()].path;
-    };
-    display1.src = img1;
-    display2.src = img2;
-  },
+ photo1: 0,
+ photo2: 0,
+ getRandomNum: function (){
+   return Math.floor(Math.random() * guitarPhoto.length);
+ },
+ getRandomImg: function (){
+   this.photo1 = guitarPhoto[this.getRandomNum()];
+   this.photo2 = guitarPhoto[this.getRandomNum()];
+   var img1 = this.photo1.path;
+   var img2 = this.photo2.path;
+   var display1 = document.getElementById ('displayImg1');
+   var display2 = document.getElementById ('displayImg2');
+   while (img1 === img2) {
+     this.photo2 = this.getRandomNum();
+     img2 = guitarPhoto[this.photo2].path;
+   };
+   display1.src = img1;
+   display2.src = img2;
+ },
 };
-
 
 
 //vote = function
@@ -31,7 +35,7 @@ var tracker = {
 
 // picture1.addEventListener('click', function(){
 //   vote(index1)
-// });
+// });2
 // picture2.addEventListener('click', function(){
 //   vote(index2)
 // });
@@ -48,3 +52,5 @@ var img9 = new GuitarPhoto('Kurt Cobain Jag', "images/kc-f.jpg");
 var img10 = new GuitarPhoto('Les Paul', "images/lp.jpg");
 var img11 = new GuitarPhoto('Slash Les Paul', "images/s-lp.jpg");
 var img12 = new GuitarPhoto('Van Halen Strat', "images/vh-s.jpg");
+
+tracker.getRandomImg();
