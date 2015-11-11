@@ -1,16 +1,14 @@
 
-main {
+#main-content {
 display: flex;
 }
 
-#displayImg1 {
+img {
   display: inline-block;
-  max-width: 200px;
-  max-height: 400px;
+  max-height: 300px;
+  max-width: 300px;
 }
 
-#displayImg2 {
-  display: inline-block;
-  max-width: 200px;
-  max-height: 400px;
+figure {
+  border: 2px solid black;
 }
