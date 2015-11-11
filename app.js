@@ -1,4 +1,6 @@
 var guitarPhoto = []
+var display1 = document.getElementById ('displayImg1');
+var display2 = document.getElementById ('displayImg2');
 
 function GuitarPhoto (name, path) {
   this.name = name;
@@ -18,8 +20,6 @@ var tracker = {
    this.photo2 = guitarPhoto[this.getRandomNum()];
    var img1 = this.photo1.path;
    var img2 = this.photo2.path;
-   var display1 = document.getElementById ('displayImg1');
-   var display2 = document.getElementById ('displayImg2');
    while (img1 === img2) {
      this.photo2 = this.getRandomNum();
      img2 = guitarPhoto[this.photo2].path;
@@ -29,16 +29,17 @@ var tracker = {
  },
 };
 
+var voteLeft = function() {
+  tracker.photo1.votes +=1;
+  console.log(tracker.photo1.votes);
+}
 
-//vote = function
+var voteRight = function() {
+  tracker.photo2.votes +=1;
+  console.log(tracker.photo2.votes);
+}
 
 
-// picture1.addEventListener('click', function(){
-//   vote(index1)
-// });2
-// picture2.addEventListener('click', function(){
-//   vote(index2)
-// });
 
 var img1 = new GuitarPhoto('Gibson 335', "images/335.jpg");
 var img2 = new GuitarPhoto('Angus Young SG', "images/ay-sg.jpg");
@@ -52,5 +53,8 @@ var img9 = new GuitarPhoto('Kurt Cobain Jag', "images/kc-f.jpg");
 var img10 = new GuitarPhoto('Les Paul', "images/lp.jpg");
 var img11 = new GuitarPhoto('Slash Les Paul', "images/s-lp.jpg");
 var img12 = new GuitarPhoto('Van Halen Strat', "images/vh-s.jpg");
+
+display1.addEventListener('click', voteLeft)
+display2.addEventListener('click', voteRight)
 
 tracker.getRandomImg();
