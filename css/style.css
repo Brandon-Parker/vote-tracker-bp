@@ -1,3 +1,8 @@
+
+main {
+display: flex;
+}
+
 #displayImg1 {
   display: inline-block;
   max-width: 200px;

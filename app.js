@@ -41,8 +41,6 @@ var voteRight = function() {
   tracker.getRandomImg();
 }
 
-
-
 var img1 = new GuitarPhoto('Gibson 335', "images/335.jpg");
 var img2 = new GuitarPhoto('Angus Young SG', "images/ay-sg.jpg");
 var img3 = new GuitarPhoto('Beatles Rickenbacher', "images/b-rb.jpg");
@@ -59,8 +57,32 @@ var img12 = new GuitarPhoto('Van Halen Strat', "images/vh-s.jpg");
 display1.addEventListener('click', voteLeft)
 display2.addEventListener('click', voteRight)
 
+var displayChart = function() {
 
+var ctx = document.getElementById("myChart").getContext("2d");
 
+var data = [
+    {
+        value: voteLeft.votes,
+        color: "#46BFBD",
+        highlight: "#FF5A5E",
+        label: "Blue"
+    },
+    {
+        value: voteRight.votes,
+        color: "#F7464A",
+        highlight: "#5AD3D1",
+        label: "Red"
+    },
 
+];
+
+var pieOptions = {
+  segmentShowStroke : false,
+  animateScale : true
+}
+
+var myNewChart = new Chart(ctx).Pie(data,pieOptions);
+};
 
 tracker.getRandomImg();
