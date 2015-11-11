@@ -32,11 +32,13 @@ var tracker = {
 var voteLeft = function() {
   tracker.photo1.votes +=1;
   console.log(tracker.photo1.votes);
+  tracker.getRandomImg();
 }
 
 var voteRight = function() {
   tracker.photo2.votes +=1;
   console.log(tracker.photo2.votes);
+  tracker.getRandomImg();
 }
 
 
@@ -56,5 +58,9 @@ var img12 = new GuitarPhoto('Van Halen Strat', "images/vh-s.jpg");
 
 display1.addEventListener('click', voteLeft)
 display2.addEventListener('click', voteRight)
+
+
+
+
 
 tracker.getRandomImg();
