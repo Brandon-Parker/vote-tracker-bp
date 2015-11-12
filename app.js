@@ -13,18 +13,18 @@ function GuitarPhoto (name, path) {
   guitarPhoto.push(this);
 }
 
-var img1 = new GuitarPhoto('Gibson 335', "images/335.jpg");
-var img2 = new GuitarPhoto('Angus Young SG', "images/ay-sg.jpg");
-var img3 = new GuitarPhoto('Beatles Rickenbacher', "images/b-rb.jpg");
-var img4 = new GuitarPhoto('BB King Lucille', "images/bbk-l.jpg");
-var img5 = new GuitarPhoto('PRS BlueGreen', "images/bluegreen-prs.jpg");
-var img6 = new GuitarPhoto('Brian May', "images/bm.jpg");
-var img7 = new GuitarPhoto('DC 400', "images/dc400.jpg");
-var img8 = new GuitarPhoto('DC 600', "images/dc600.jpg");
-var img9 = new GuitarPhoto('Kurt Cobain Jag', "images/kc-f.jpg");
-var img10 = new GuitarPhoto('Les Paul', "images/lp.jpg");
-var img11 = new GuitarPhoto('Slash Les Paul', "images/s-lp.jpg");
-var img12 = new GuitarPhoto('Van Halen Strat', "images/vh-s.jpg");
+var img1 = new GuitarPhoto('Kiesel Aqua Aries', "images/aqua-aries.jpg");
+var img2 = new GuitarPhoto('Blood Red PRS', "images/blackred-prs.jpg");
+var img3 = new GuitarPhoto('Blue Green PRS', "images/bluegreen-prs.jpg");
+var img4 = new GuitarPhoto('Kiesel DC7X', "images/dc7x.jpg");
+var img5 = new GuitarPhoto('Carvin DC 400', "images/dc400.jpg");
+var img6 = new GuitarPhoto('Kiesel Fire Aries', "images/fire-aries.jpg");
+var img7 = new GuitarPhoto('Kiesel Lava SCB7', "images/lava-scb7.jpg");
+var img8 = new GuitarPhoto('Gibson Les Paul Pro Black', "images/lespaul-b.jpg");
+var img9 = new GuitarPhoto('Gibson Les Paul Vintage Burst', "images/lespaul.jpg");
+var img10 = new GuitarPhoto('Custom Single Cut PRS', "images/sc-prs.jpg");
+var img11 = new GuitarPhoto('Suhr Modern', "images/suhr.jpg");
+var img12 = new GuitarPhoto('Nashville Telecaster', "images/tele.jpg");
 
 var tracker = {
  photo1: 0,
@@ -57,7 +57,7 @@ makeNewChart: function(){
     myNewChart.update();
 
   } else {
-    myNewChart = new Chart(ctx).Pie(guitarPhoto, {
+    myNewChart = new Chart(ctx).Doughnut(guitarPhoto, {
     animationSteps : 100,
     animationEasing : 'easeOutBounce',
     percentageInnerCutout : 25,
