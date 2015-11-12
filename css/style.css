@@ -2,19 +2,20 @@
 #main-content {
   display: flex;
   flex: row wrap;
+
 }
 
 .items {
   flex: 1 1 auto;
 }
-/*
-img {
-  max-width: 100%;
-}*/
 
-img, canvas {
+canvas {
+  width: 30%;
+}
+
+img {
   border: 2px solid black;
-  width: 300px;
+  width: 400px;
   height: 300px;
 }
 

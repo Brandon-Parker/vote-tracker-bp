@@ -3,28 +3,28 @@ var display1 = document.getElementById ('displayImg1');
 var display2 = document.getElementById ('displayImg2');
 var myNewChart;
 
-function GuitarPhoto (name, path) {
+function GuitarPhoto (name, path, color) {
   this.name = name;
   this.path = path;
   this.value = 0;
   this.label = this.name;
-  this.color = '#FEEDB8';
+  this.color = color;
   this.highlight = '#D0FB32';
   guitarPhoto.push(this);
 }
 
-var img1 = new GuitarPhoto('Kiesel Aqua Aries', "images/aqua-aries.jpg");
-var img2 = new GuitarPhoto('Blood Red PRS', "images/blackred-prs.jpg");
-var img3 = new GuitarPhoto('Blue Green PRS', "images/bluegreen-prs.jpg");
-var img4 = new GuitarPhoto('Kiesel DC7X', "images/dc7x.jpg");
-var img5 = new GuitarPhoto('Carvin DC 400', "images/dc400.jpg");
-var img6 = new GuitarPhoto('Kiesel Fire Aries', "images/fire-aries.jpg");
-var img7 = new GuitarPhoto('Kiesel Lava SCB7', "images/lava-scb7.jpg");
-var img8 = new GuitarPhoto('Gibson Les Paul Pro Black', "images/lespaul-b.jpg");
-var img9 = new GuitarPhoto('Gibson Les Paul Vintage Burst', "images/lespaul.jpg");
-var img10 = new GuitarPhoto('Custom Single Cut PRS', "images/sc-prs.jpg");
-var img11 = new GuitarPhoto('Suhr Modern', "images/suhr.jpg");
-var img12 = new GuitarPhoto('Nashville Telecaster', "images/tele.jpg");
+var img1 = new GuitarPhoto('Kiesel Aqua Aries', "images/aqua-aries.jpg", "#2E9AFE");
+var img2 = new GuitarPhoto('Blood Red PRS', "images/blackred-prs.jpg", "#B40404");
+var img3 = new GuitarPhoto('Blue Green PRS', "images/bluegreen-prs.jpg", "#01DF3A");
+var img4 = new GuitarPhoto('Kiesel DC7X', "images/dc7x.jpg", "#FE9A2E");
+var img5 = new GuitarPhoto('Carvin DC 400', "images/dc400.jpg", "#0040FF");
+var img6 = new GuitarPhoto('Kiesel Fire Aries', "images/fire-aries.jpg", "#FFFF00");
+var img7 = new GuitarPhoto('Kiesel Lava SCB7', "images/lava-scb7.jpg", "#FA58AC");
+var img8 = new GuitarPhoto('Gibson Les Paul Pro Black', "images/lespaul-b.jpg", "#585858");
+var img9 = new GuitarPhoto('Gibson Les Paul Vintage Burst', "images/lespaul.jpg", "#F5D0A9");
+var img10 = new GuitarPhoto('Custom Single Cut PRS', "images/sc-prs.jpg", "#D358F7");
+var img11 = new GuitarPhoto('Suhr Modern', "images/suhr.jpg", "#B45F04");
+var img12 = new GuitarPhoto('Nashville Telecaster', "images/tele.jpg", "#BDBDBD");
 
 var tracker = {
  photo1: 0,
@@ -91,7 +91,5 @@ var pieOptions = {
   segmentShowStroke : false,
   animateScale : true
 }
-
-
 
 tracker.getRandomImg();
