@@ -1,15 +1,21 @@
 
 #main-content {
-display: flex;
+  display: flex;
+  flex: row wrap;
 }
 
+.items {
+  flex: 1 1 auto;
+}
+/*
 img {
-  display: inline-block;
-  max-height: 300px;
-  max-width: 300px;
+  max-width: 100%;
+}*/
+
+img, canvas {
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
 }
 
-figure {
-  border: 2px solid black;
-}
 
