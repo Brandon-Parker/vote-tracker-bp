@@ -1,4 +1,21 @@
-var guitarPhoto = []
+if (localStorage.guitarPhoto) {
+  var guitarPhoto = JSON.parse(localStorage.guitarPhoto);
+} else {
+  var guitarPhoto = [];
+  var img1 = new GuitarPhoto('Kiesel Aqua Aries', "images/aqua-aries.jpg", "#2E9AFE");
+  var img2 = new GuitarPhoto('Blood Red PRS', "images/blackred-prs.jpg", "#B40404");
+  var img3 = new GuitarPhoto('Blue Green PRS', "images/bluegreen-prs.jpg", "#01DF3A");
+  var img4 = new GuitarPhoto('Kiesel DC7X', "images/dc7x.jpg", "#FE9A2E");
+  var img5 = new GuitarPhoto('Carvin DC 400', "images/dc400.jpg", "#0040FF");
+  var img6 = new GuitarPhoto('Kiesel Fire Aries', "images/fire-aries.jpg", "#FFFF00");
+  var img7 = new GuitarPhoto('Kiesel Lava SCB7', "images/lava-scb7.jpg", "#FA58AC");
+  var img8 = new GuitarPhoto('Gibson Les Paul Pro Black', "images/lespaul-b.jpg", "#585858");
+  var img9 = new GuitarPhoto('Gibson Les Paul Vintage Burst', "images/lespaul.jpg", "#F5D0A9");
+  var img10 = new GuitarPhoto('Custom Single Cut PRS', "images/sc-prs.jpg", "#D358F7");
+  var img11 = new GuitarPhoto('Suhr Modern', "images/suhr.jpg", "#B45F04");
+  var img12 = new GuitarPhoto('Nashville Telecaster', "images/tele.jpg", "#BDBDBD");
+}
+
 var display1 = document.getElementById ('displayImg1');
 var display2 = document.getElementById ('displayImg2');
 var myNewChart;
@@ -12,19 +29,6 @@ function GuitarPhoto (name, path, color) {
   this.highlight = '#D0FB32';
   guitarPhoto.push(this);
 }
-
-var img1 = new GuitarPhoto('Kiesel Aqua Aries', "images/aqua-aries.jpg", "#2E9AFE");
-var img2 = new GuitarPhoto('Blood Red PRS', "images/blackred-prs.jpg", "#B40404");
-var img3 = new GuitarPhoto('Blue Green PRS', "images/bluegreen-prs.jpg", "#01DF3A");
-var img4 = new GuitarPhoto('Kiesel DC7X', "images/dc7x.jpg", "#FE9A2E");
-var img5 = new GuitarPhoto('Carvin DC 400', "images/dc400.jpg", "#0040FF");
-var img6 = new GuitarPhoto('Kiesel Fire Aries', "images/fire-aries.jpg", "#FFFF00");
-var img7 = new GuitarPhoto('Kiesel Lava SCB7', "images/lava-scb7.jpg", "#FA58AC");
-var img8 = new GuitarPhoto('Gibson Les Paul Pro Black', "images/lespaul-b.jpg", "#585858");
-var img9 = new GuitarPhoto('Gibson Les Paul Vintage Burst', "images/lespaul.jpg", "#F5D0A9");
-var img10 = new GuitarPhoto('Custom Single Cut PRS', "images/sc-prs.jpg", "#D358F7");
-var img11 = new GuitarPhoto('Suhr Modern', "images/suhr.jpg", "#B45F04");
-var img12 = new GuitarPhoto('Nashville Telecaster', "images/tele.jpg", "#BDBDBD");
 
 var tracker = {
  photo1: 0,
@@ -55,7 +59,7 @@ makeNewChart: function(){
   if (myNewChart) {
     tracker.refreshSegments();
     myNewChart.update();
-
+    localStorage.setItem('guitarPhoto', JSON.stringify(guitarPhoto));
   } else {
     myNewChart = new Chart(ctx).Doughnut(guitarPhoto, {
     animationSteps : 100,
