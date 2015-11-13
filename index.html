@@ -13,23 +13,25 @@
     </header>
   <section id='main-content'>
 
-    <figure class='items' id='leftPhotoDiv'>
-      <img id='displayImg1' alt="Image One">
-      <figcaption id='capLeft'>Left</figcaption>
-    </figure>
 
-    <canvas class='items' id="myChart"></canvas>
-
-    <figure class='items' id='rightPhotoDiv'>
-      <img id='displayImg2' alt="Image Two">
-      <figcaption id='capRight'>Right</figcaption>
-    </figure>
-
-    </section>
-  <footer>
-    <h2>Footer</h2>
-  </footer>
-    <script src="chart.js"></script>
-    <script src = "app.js" type="text/javascript"></script>
+    <div class="row">
+      <div class="one-half column center" id='leftPhotoDiv'>
+          <img id='displayImg1' alt="Image One">
+            <figcaption id='capLeft'>Left</figcaption>
+      </div>
+      <div class="one-half column center" id='rightPhotoDiv'>
+          <img id='displayImg2' alt="Image Two">
+            <figcaption id='capRight'>Right</figcaption>
+      </div>
+    </div>
+    <div class="row">
+      <canvas class="twelve columns" id="myChart"></canvas>
+    </div>
+  </section>
+    <footer>
+      <h2>Footer</h2>
+    </footer>
+      <script src="chart.js"></script>
+      <script src = "app.js" type="text/javascript"></script>
   </body>
 </html>
